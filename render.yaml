@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: auditlens
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: cd backend && python main.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.13.5"
+    autoDeploy: true
+    healthCheckPath: /
+    region: oregon
